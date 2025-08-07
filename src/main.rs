@@ -3,7 +3,7 @@ mod algorithms;
 fn main() {
     let mut numbers = vec![12, 53, 235, 725, 5, 75, 35];
     println!("Original Array: {:?}", numbers);
-    algorithms::sorting::sort::quicksort(&mut numbers);
+    algorithms::sorting::sort::mergesort(&mut numbers);
     println!("Sorted Array: {:?}", numbers);
 }
 
