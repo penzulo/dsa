@@ -57,7 +57,7 @@ ListNode* build_list(const std::vector<int>& nums) {
 std::vector<int> to_vector(ListNode* node) {
   std::vector<int> result;
   while (node != nullptr) {
-    result.push_back(node->data);
+    result.emplace_back(node->data);
     node = node->next;
   }
   return result;
