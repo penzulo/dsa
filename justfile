@@ -8,11 +8,11 @@ configure:
 
 # Build everything
 build: configure
-    cmake --build build
+    cmake --build build --parallel
 
 # Run every test
 test: build
-    ctest --test-dir build --output-on-failure
+    ctest --test-dir build --output-on-failure --parallel
 
 # Run only tests matching a pattern: `just test-one 0001`
 test-one PATTERN: build
