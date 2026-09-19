@@ -1,8 +1,9 @@
 #include <cassert>
-#include <print>
 #include <vector>
 
-float find_median(const std::vector<int>& sample) {
+using std::vector;
+
+float find_median(const vector<int>& sample) {
   const auto length = sample.size();
   const auto mid = length / 2;
 
@@ -15,12 +16,12 @@ float find_median(const std::vector<int>& sample) {
          2.0F;
 }
 
-float find_median_sorted_arrays(const std::vector<int>& nums1,
-                                const std::vector<int>& nums2) {
+float find_median_sorted_arrays(const vector<int>& nums1,
+                                const vector<int>& nums2) {
   auto iterator1 = nums1.begin();
   auto iterator2 = nums2.begin();
 
-  std::vector<int> result;
+  vector<int> result;
   result.reserve(nums1.size() + nums2.size());
 
   while (iterator1 != nums1.end() && iterator2 != nums2.end()) {
@@ -41,10 +42,15 @@ float find_median_sorted_arrays(const std::vector<int>& nums1,
 
 int main() {
   {
-    assert(find_median_sorted_arrays({1, 3}, {2}) == 2.0F);
-    assert(find_median_sorted_arrays({1, 2}, {3, 4}) == 2.5F);
+    const auto result = find_median_sorted_arrays({1, 3}, {2});
+    const auto expected = 2.0F;
+    assert(result == expected);
+  }
+  {
+    const auto result = find_median_sorted_arrays({1, 2}, {3, 4});
+    const auto expected = 2.5F;
+    assert(result == expected);
   }
 
-  std::println("all tests passed");
   return 0;
 }

@@ -3,7 +3,6 @@
  */
 
 #include <cassert>
-#include <print>
 #include <vector>
 
 constexpr int base{10};
@@ -17,7 +16,7 @@ struct ListNode {
   ListNode(const int val, ListNode* next_node) : data{val}, next{next_node} {}
 };
 
-ListNode* add_two_numbers(ListNode* list1, ListNode* list2) {
+ListNode* add_two_numbers(const ListNode* list1, const ListNode* list2) {
   int carry{};
   ListNode result;
   ListNode* current = &result;
@@ -54,7 +53,7 @@ ListNode* build_list(const std::vector<int>& nums) {
   return dummy.next;
 }
 
-std::vector<int> to_vector(ListNode* node) {
+std::vector<int> to_vector(const ListNode* node) {
   std::vector<int> result;
   while (node != nullptr) {
     result.emplace_back(node->data);
@@ -63,7 +62,7 @@ std::vector<int> to_vector(ListNode* node) {
   return result;
 }
 
-void delete_list(ListNode* head) {
+void delete_list(const ListNode* head) {
   while (head != nullptr) {
     ListNode* next = head->next;
     delete head;
@@ -73,10 +72,10 @@ void delete_list(ListNode* head) {
 
 int main() {
   {
-    auto* l1 = build_list({2, 4, 3});
-    auto* l2 = build_list({5, 6, 4});
-    auto* result = add_two_numbers(l1, l2);
-    std::vector<int> expected{7, 0, 8};
+    const auto* l1 = build_list({2, 4, 3});
+    const auto* l2 = build_list({5, 6, 4});
+    const auto* result = add_two_numbers(l1, l2);
+    const std::vector<int> expected{7, 0, 8};
     assert(to_vector(result) == expected);
 
     delete_list(l1);
@@ -84,5 +83,5 @@ int main() {
     delete_list(result);
   }
 
-  std::println("all tests passed!");
+  return 0;
 }

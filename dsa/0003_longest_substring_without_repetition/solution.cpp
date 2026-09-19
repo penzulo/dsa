@@ -1,6 +1,5 @@
 #include <algorithm>
 #include <cassert>
-#include <print>
 #include <string>
 #include <vector>
 
@@ -12,7 +11,7 @@ size_t length_of_longest_substring(const std::string& s) {
   size_t left{};
 
   for (size_t right = 0; right < s.size(); right++) {
-    auto c = static_cast<unsigned char>(s[right]);
+    const auto c = static_cast<unsigned char>(s[right]);
 
     if (last_seen[c] >= left && last_seen[c] != std::string::npos) {
       left = last_seen[c] + 1;
@@ -39,7 +38,5 @@ int main() {
   {
     assert(length_of_longest_substring("") == 0);
   }
-
-  std::println("all tests passed!");
   return 0;
 }

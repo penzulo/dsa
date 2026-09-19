@@ -2,10 +2,10 @@
 #include <cassert>
 #include <string>
 
-using index_t = std::string::difference_type;
+using std::string;
+using index_t = string::difference_type;
 
-size_t expand_around_center(index_t left, index_t right,
-                            const std::string& text) {
+size_t expand_around_center(index_t left, index_t right, const string& text) {
   while (left >= 0 && right < static_cast<index_t>(text.size()) &&
          text[left] == text[right]) {
     --left;
@@ -66,4 +66,6 @@ int main() {
     const auto result = longest_palindrome("");
     assert(result.empty());
   }
+
+  return 0;
 }
