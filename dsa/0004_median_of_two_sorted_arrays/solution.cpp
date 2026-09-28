@@ -11,13 +11,10 @@ float find_median(const vector<int>& sample) {
     return static_cast<float>(sample[mid]);
   }
 
-  return (static_cast<float>(sample[mid - 1]) +
-          static_cast<float>(sample[mid])) /
-         2.0F;
+  return (static_cast<float>(sample[mid - 1]) + static_cast<float>(sample[mid])) / 2.0F;
 }
 
-float find_median_sorted_arrays(const vector<int>& nums1,
-                                const vector<int>& nums2) {
+float find_median_sorted_arrays(const vector<int>& nums1, const vector<int>& nums2) {
   auto iterator1 = nums1.begin();
   auto iterator2 = nums2.begin();
 

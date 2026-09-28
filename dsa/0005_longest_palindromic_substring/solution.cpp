@@ -6,8 +6,7 @@ using std::string;
 using index_t = string::difference_type;
 
 size_t expand_around_center(index_t left, index_t right, const string& text) {
-  while (left >= 0 && right < static_cast<index_t>(text.size()) &&
-         text[left] == text[right]) {
+  while (left >= 0 && right < static_cast<index_t>(text.size()) && text[left] == text[right]) {
     --left;
     ++right;
   }
