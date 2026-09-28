@@ -16,7 +16,7 @@ vector<int> two_sum(const vector<int>& nums, const int target) {
       return {it->second, static_cast<int>(i)};
     }
 
-    matches[nums[static_cast<size_t>(i)]] = static_cast<int>(i);
+    matches[num] = static_cast<int>(i);
   }
 
   return vector<int>{};

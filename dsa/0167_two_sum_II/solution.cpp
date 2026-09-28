@@ -4,8 +4,12 @@
 using std::vector, std::size_t;
 
 vector<int> two_sum(const vector<int>& numbers, const int target) {
-  size_t left = 0;
-  size_t right = numbers.size() - 1;
+  if (numbers.size() < 2) {
+    return {};
+  }
+
+  size_t left{};
+  size_t right{numbers.size() - 1};
 
   while (left < right) {
     const int sum = numbers[left] + numbers[right];
@@ -16,9 +20,7 @@ vector<int> two_sum(const vector<int>& numbers, const int target) {
 
     if (sum < target) {
       ++left;
-    }
-
-    if (sum > target) {
+    } else {
       --right;
     }
   }
