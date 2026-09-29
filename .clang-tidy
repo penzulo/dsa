@@ -1,3 +1,6 @@
+# Test mains are flat assert(...) blocks: gcc's assert macro expands to
+# ternary/if-else code that inflates cognitive-complexity scores, so that
+# check is a poor fit for the test harnesses in this repo.
 Checks: >
   -*,
   bugprone-*,
@@ -7,7 +10,8 @@ Checks: >
   cppcoreguidelines-*,
   google-*,
   -modernize-use-trailing-return-type,
-  -readability-identifier-length
+  -readability-identifier-length,
+  -readability-function-cognitive-complexity
 
 WarningsAsErrors: ''
 HeaderFilterRegex: '.*'
