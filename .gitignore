@@ -2,3 +2,4 @@ build/
 build-release/
 compile_commands.json
 practice.cpp
+practice.md
