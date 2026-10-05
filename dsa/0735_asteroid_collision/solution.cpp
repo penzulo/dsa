@@ -24,7 +24,7 @@ auto asteroid_collision(const vector<int>& asteroids) -> vector<int> {
     }
 
     if (is_alive) {
-      result.emplace_back(current);
+      result.push_back(current);
     }
   }
 

@@ -20,7 +20,7 @@ auto is_valid(const string& s) -> bool {
         return false;
       }
     } else {
-      stack.emplace(c);
+      stack.push(c);
     }
   }
 

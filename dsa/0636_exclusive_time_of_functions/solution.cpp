@@ -29,7 +29,7 @@ auto exclusive_time(const int n, const vector<string>& logs) -> vector<int> {
         result[static_cast<size_t>(function_stack.top())] += timestamp - elapsed_time;
       }
 
-      function_stack.emplace(function_id);
+      function_stack.push(function_id);
       elapsed_time = timestamp;
     } else {
       result[static_cast<size_t>(function_stack.top())] += timestamp - elapsed_time + 1;

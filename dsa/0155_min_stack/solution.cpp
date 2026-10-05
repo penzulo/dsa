@@ -8,12 +8,12 @@ struct MinStack {
   MinStack() = default;
 
   auto push(const int value) {
-    base.emplace(value);
+    base.push(value);
 
     if (min_stack.empty() || value < min_stack.top()) {
-      min_stack.emplace(value);  // update the minimum value
+      min_stack.push(value);  // update the minimum value
     } else {
-      min_stack.emplace(min_stack.top());  // add the current min element to the top
+      min_stack.push(min_stack.top());  // add the current min element to the top
     }
   }
 

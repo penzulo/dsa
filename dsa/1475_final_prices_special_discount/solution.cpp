@@ -16,7 +16,7 @@ auto final_prices(const vector<int>& prices) -> vector<int> {
       result[static_cast<size_t>(index)] -= prices[i];
     }
 
-    monotonic_stack.emplace(static_cast<int>(i));
+    monotonic_stack.push(static_cast<int>(i));
   }
 
   return result;
