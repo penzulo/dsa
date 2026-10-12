@@ -1,12 +1,7 @@
-/**
- * Problem URL:
- * https://leetcode.com/problems/longest-substring-without-repeating-characters/
- * Visualisation: https://jr46mg.csb.app/
- */
+// Problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 #include <algorithm>
 #include <cassert>
-#include <print>
 #include <string>
 #include <unordered_map>
 
@@ -24,7 +19,7 @@ unsigned int length_of_longest_substring(const std::string& s) {
       left++;
     }
 
-    max_length = std::max<unsigned int>(max_length, right - left + 1);
+    max_length = std::max<unsigned int>(max_length, static_cast<unsigned int>(right - left + 1));
   }
 
   return max_length;
@@ -45,5 +40,5 @@ int main() {
     assert(length_of_longest_substring("") == 0);
   }
 
-  std::println("all tests passed!");
+  return 0;
 }

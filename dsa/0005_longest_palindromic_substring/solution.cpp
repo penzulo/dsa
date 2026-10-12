@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/longest-palindromic-substring/
+
 #include <algorithm>
 #include <cassert>
 #include <string>
@@ -6,7 +8,8 @@ using std::string;
 using index_t = string::difference_type;
 
 size_t expand_around_center(index_t left, index_t right, const string& text) {
-  while (left >= 0 && right < static_cast<index_t>(text.size()) && text[left] == text[right]) {
+  while (left >= 0 && right < static_cast<index_t>(text.size()) &&
+         text[static_cast<std::size_t>(left)] == text[static_cast<std::size_t>(right)]) {
     --left;
     ++right;
   }
