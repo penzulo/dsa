@@ -3,3 +3,5 @@ build-release/
 compile_commands.json
 practice.cpp
 practice.md
+__pycache__/
+*.pyc
