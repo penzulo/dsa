@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/remove-element/
+
 #include <cassert>
 #include <vector>
 

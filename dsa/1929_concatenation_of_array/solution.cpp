@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/concatenation-of-array/
+
 #include <cassert>
 #include <ranges>
 #include <vector>

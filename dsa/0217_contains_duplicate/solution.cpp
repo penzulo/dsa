@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/contains-duplicate/
+
 #include <cassert>
 #include <unordered_set>
 #include <vector>

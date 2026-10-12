@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/trapping-rain-water/
+
 #include <algorithm>
 #include <cassert>
 #include <numeric>

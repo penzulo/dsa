@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/koko-eating-bananas/
+
 #include <algorithm>
 #include <cassert>
 #include <numeric>

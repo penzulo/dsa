@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/encode-and-decode-strings/
+
 #include <cassert>
 #include <string>
 #include <vector>

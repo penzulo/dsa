@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
 #include <cassert>
 #include <vector>
 

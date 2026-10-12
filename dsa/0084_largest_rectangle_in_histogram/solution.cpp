@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/largest-rectangle-in-histogram/
+
 #include <algorithm>
 #include <cassert>
 #include <ranges>

@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/magic-squares-in-grid/
+
 #include <cassert>
 #include <cstddef>
 #include <unordered_set>

@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/valid-parentheses/
+
 #include <cassert>
 #include <stack>
 #include <unordered_map>

@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/group-anagrams/
+
 #include <algorithm>
 #include <cassert>
 #include <string>

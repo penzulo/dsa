@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/remove-outermost-parentheses/
+
 #include <cassert>
 #include <string>
 

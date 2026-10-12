@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/asteroid-collision/
+
 #include <cassert>
 #include <cstdlib>
 #include <vector>

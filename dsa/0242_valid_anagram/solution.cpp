@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/valid-anagram/
+
 #include <algorithm>
 #include <array>
 #include <cassert>

@@ -1,3 +1,5 @@
+// Problem: https://leetcode.com/problems/valid-sudoku/
+
 #include <array>
 #include <cassert>
 #include <unordered_set>
