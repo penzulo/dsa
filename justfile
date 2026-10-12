@@ -59,14 +59,20 @@ fmt:
 fmt-check:
     @find {{source_dir}} templates \( -name '*.cpp' -o -name '*.hpp' \) -print0 | xargs -0 clang-format --dry-run --Werror
 
-# Lint everything with clang-tidy and apply fixes
+# Verify every problem file starts with a '// Problem:' header (URL or desc.)
+[group('quality')]
+check-links:
+    uv run scripts/check_links.py
+
+# Lint everything with clang-tidy (report only: never apply --fix, which has
+# been known to rewrite assertions into std::cmp_equal without adding <utility>)
 [group('quality')]
 lint: configure
-    clang-tidy -p {{build_dir}} --fix {{source_dir}}/**/*.cpp
+    clang-tidy -p {{build_dir}} {{source_dir}}/**/*.cpp
 
-# Full verification: build, test, format-check and lint
+# Full verification: build, test, format-check, link-check and lint
 [group('quality')]
-check: build test fmt-check lint
+check: build test fmt-check check-links lint
     @echo 'All checks passed'
 
 # ---------------------------------------------------------------- scaffold
@@ -78,6 +84,13 @@ new NUMBER NAME:
     mkdir -p '{{source_dir}}/{{NUMBER}}_{{NAME}}'
     cp {{solution_template}} '{{source_dir}}/{{NUMBER}}_{{NAME}}/solution.cpp'
     @echo 'Created {{source_dir}}/{{NUMBER}}_{{NAME}}/solution.cpp'
+
+# ---------------------------------------------------------------- practice
+
+# Pick a random problem from the dsa/ set to practice.
+[group('practice')]
+random:
+    uv run scripts/random_problem.py
 
 # ---------------------------------------------------------------- maintenance
 
@@ -99,3 +112,4 @@ alias i  := index
 alias f  := fmt
 alias l  := lint
 alias c  := clean
+alias rand := random

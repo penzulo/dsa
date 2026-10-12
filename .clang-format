@@ -144,7 +144,7 @@ BreakInheritanceList: BeforeColon
 BreakStringLiterals: true
 BreakTemplateDeclarations: Yes
 ColumnLimit:     100
-CommentPragmas:  '^ IWYU pragma:'
+CommentPragmas:  '^ IWYU pragma:|^ Problem:'
 CompactNamespaces: false
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
