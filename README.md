@@ -22,7 +22,7 @@ Each problem lives in its own directory with a `solution.cpp`, optional `notes.m
 just build     # configure + compile
 just test      # run all tests
 just test-one 0001  # run a single problem
-just random    # pick a random problem to practice
+just random    # pick a random problem (JSON: | jq '.url', | from json)
 ```
 
 Run bare `just` to list every available recipe.
@@ -35,7 +35,7 @@ Run bare `just` to list every available recipe.
 | `just release` | Build the Release tree |
 | `just test` | Run all tests |
 | `just test-one PATTERN` | Run tests matching pattern |
-| `just random` | Pick a random problem to practice |
+| `just random` | Pick a random problem to practice (emits JSON for `jq` / nushell `from json`) |
 | `just configure` | (Re)generate the build system |
 | `just index` | Symlink compile_commands.json for clangd |
 | `just fmt` | Format all source files |
