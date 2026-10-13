@@ -92,6 +92,28 @@ new NUMBER NAME:
 random:
     uv run scripts/random_problem.py
 
+# ---------------------------------------------------------------- diary
+
+# Scaffold (or reopen) today's practice-diary entry in $EDITOR
+[group('diary')]
+log:
+    uv run scripts/log.py today --open
+
+# Append a blank diary section for a problem, e.g. `just log-add 0102`
+[group('diary')]
+log-add NUMBER:
+    uv run scripts/log.py add {{NUMBER}}
+
+# Scaffold/open a topic note; with no name, lists existing topics
+[group('diary')]
+log-topics NAME='':
+    uv run scripts/log.py topics {{NAME}} --open
+
+# Print a JSON summary of every logged attempt (| from json in nushell)
+[group('diary')]
+log-summary:
+    uv run scripts/log.py summary
+
 # ---------------------------------------------------------------- maintenance
 
 # Remove all build artifacts

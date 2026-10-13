@@ -36,6 +36,10 @@ Run bare `just` to list every available recipe.
 | `just test` | Run all tests |
 | `just test-one PATTERN` | Run tests matching pattern |
 | `just random` | Pick a random problem to practice (emits JSON for `jq` / nushell `from json`) |
+| `just log` | Scaffold/open today's practice-diary entry |
+| `just log-add NUM` | Append a diary section for a problem |
+| `just log-topics [NAME]` | List or scaffold a topic note |
+| `just log-summary` | JSON summary of every logged attempt |
 | `just configure` | (Re)generate the build system |
 | `just index` | Symlink compile_commands.json for clangd |
 | `just fmt` | Format all source files |
@@ -53,6 +57,33 @@ just new 0004 median_of_two_sorted_arrays
 ```
 
 This creates `dsa/0004_median_of_two_sorted_arrays/solution.cpp` from the template.
+
+## Practice Diary
+
+A private, **git-ignored** `journal/` records what was attempted and what to
+review, kept in two layers:
+
+```
+journal/                     # git-ignored
+├── daily/2026-10-12.md      # one entry per timed session
+└── topics/bfs.md            # evolving notes per DSA concept
+```
+
+```sh
+just log                # scaffold/open today's entry in $EDITOR
+just log-add 0102       # append a blank section for that problem
+just log-topics bfs     # open (or list) a concept note
+just log-summary        # JSON: outcomes, per-tag pass rates, flagged problems
+```
+
+Each problem section is a `## NNNN Title — <done/partial/failed>` heading with a
+`tags:` line and `missed / correct / couldn't see / review` prompts. Problem
+numbers are resolved through the `// Problem:` headers, and `just log-summary`
+aggregates the headings so you can see weak areas over time:
+
+```sh
+just log-summary | from json | get by_tag     # nushell
+```
 
 ## Requirements
 
