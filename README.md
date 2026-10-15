@@ -76,7 +76,7 @@ just log-topics bfs     # open (or list) a concept note
 just log-summary        # JSON: outcomes, per-tag pass rates, flagged problems
 ```
 
-Each problem section is a `## NNNN Title — <done/partial/failed>` heading with a
+Each problem section is a `## NNNN Title — <done/partial/failed/learned>` heading with a
 `tags:` line and `missed / correct / couldn't see / review` prompts. Problem
 numbers are resolved through the `// Problem:` headers, and `just log-summary`
 aggregates the headings so you can see weak areas over time:

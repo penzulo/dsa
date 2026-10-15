@@ -37,8 +37,13 @@ TOPIC_TEMPLATE = problem_meta.ROOT / "templates" / "journal_topic.md"
 
 HEADING_RE = re.compile(r"^##\s+(\d+)\s+(.*?)\s*$")
 FIELD_RE = re.compile(r"^(timeLeft|score|tags):\s*(.*)$")
-EMOJI_OUTCOME = {"\u2705": "done", "\u26a0\ufe0f": "partial", "\u274c": "failed"}
-OUTCOMES = ("done", "partial", "failed")
+EMOJI_OUTCOME = {
+    "\u2705": "done",
+    "\u26a0\ufe0f": "partial",
+    "\u274c": "failed",
+    "\U0001f4d6": "learned",
+}
+OUTCOMES = ("done", "partial", "failed", "learned")
 
 
 def slugify(name: str) -> str:
@@ -190,7 +195,7 @@ def cmd_summary(args) -> dict:
             by_outcome[a["outcome"]] += 1
         for tag in a["tags"]:
             entry = by_tag.setdefault(
-                tag, {"attempts": 0, "done": 0, "partial": 0, "failed": 0}
+                tag, {"attempts": 0, **{o: 0 for o in OUTCOMES}}
             )
             entry["attempts"] += 1
             if a["outcome"] in entry:
@@ -202,7 +207,9 @@ def cmd_summary(args) -> dict:
         "by_outcome": by_outcome,
         "by_tag": by_tag,
         "flagged": sorted(
-            a["number"] for a in attempts if a["outcome"] in ("partial", "failed")
+            a["number"]
+            for a in attempts
+            if a["outcome"] in ("partial", "failed", "learned")
         ),
         "problems": attempts,
     }
