@@ -23,6 +23,8 @@ bool is_valid_sudoku(const board_type& board) {
         continue;
       }
 
+      // We subtract `1` from val to convert the literal underlying
+      // number to an index for the bitset.
       const auto digit = static_cast<size_t>(val - '1');
       const auto box = ((row / 3) * 3) + (col / 3);
 

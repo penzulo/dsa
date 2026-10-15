@@ -3,7 +3,6 @@
 #include <cassert>
 #include <optional>
 #include <queue>
-#include <ranges>
 #include <vector>
 
 using std::vector;
@@ -14,7 +13,6 @@ struct TreeNode {
   TreeNode* right{};
   int val{};
 
-  TreeNode() = default;
   explicit TreeNode(const int x) : val(x) {}
   TreeNode(TreeNode* l, const int x, TreeNode* r) : left(l), right(r), val(x) {}
 };
