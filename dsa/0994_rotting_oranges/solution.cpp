@@ -15,7 +15,7 @@ auto oranges_rotting(grid_t<int>& grid) -> int {
   /*
    * Thought Process:
    * We need to return the number of minutes that must elapse in order
-   * to turn a fresh orange into a rotten one and -1 is impossible.
+   * to turn a fresh orange into a rotten one and -1 if is impossible.
    * IT IS NOT GUARENTEED THAT THERE MIGHT BE AT LEAST A SINGLE ROTTEN ORANGE
    * We need to check if the grid has any fresh oranges at all too.
    * We need to check if ALL the fresh oranges have rotten. If a single fresh orange remains,

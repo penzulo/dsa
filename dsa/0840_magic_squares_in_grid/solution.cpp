@@ -6,9 +6,9 @@
 #include <vector>
 
 using std::vector, std::size_t;
-using interval_set = vector<vector<int>>;
+using grid_t = vector<vector<int>>;
 
-auto is_magic_square(const interval_set& grid, const size_t row, const size_t col) -> bool {
+auto is_magic_square(const grid_t& grid, const size_t row, const size_t col) -> bool {
   std::unordered_set<int> values;
 
   // The 3x3 window must contain each digit 1..9 exactly once.
@@ -43,7 +43,7 @@ auto is_magic_square(const interval_set& grid, const size_t row, const size_t co
   return diagonal1 == 15 && diagonal2 == 15;
 }
 
-auto num_magic_squares(const interval_set& grid) -> int {
+auto num_magic_squares(const grid_t& grid) -> int {
   const auto rows = grid.size();
   const auto cols = grid[0].size();
   int count{};
@@ -61,7 +61,7 @@ auto num_magic_squares(const interval_set& grid) -> int {
 
 // Hoists the asserts into a tiny helper so `main` stays flat and both
 // functions keep a low cognitive-complexity score.
-static void expect_magic_count(const interval_set& grid, const int expected) {
+static void expect_magic_count(const grid_t& grid, const int expected) {
   const auto result = num_magic_squares(grid);
   assert(result == expected);
 }

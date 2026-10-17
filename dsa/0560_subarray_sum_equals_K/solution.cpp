@@ -1,6 +1,5 @@
 // Problem: https://leetcode.com/problems/subarray-sum-equals-k/
 #include <cassert>
-#include <numeric>
 #include <unordered_map>
 #include <vector>
 

@@ -57,8 +57,8 @@ int main() {
     const input_t points{{3, 3}, {-2, 4}};
     const auto out = k_closest(points, 2);
     assert(out.size() == 2);
-    assert((out[0] == std::vector<int>{3, 3} || out[0] == std::vector<int>{-2, 4}));
-    assert((out[1] == std::vector<int>{3, 3} || out[1] == std::vector<int>{-2, 4}));
+    assert((out[0] == vector<int>{3, 3} || out[0] == vector<int>{-2, 4}));
+    assert((out[1] == vector<int>{3, 3} || out[1] == vector<int>{-2, 4}));
     assert(out[0] != out[1]);
   }
   {
@@ -66,14 +66,14 @@ int main() {
     const input_t points{{1, 1}, {2, 2}};
     const auto out = k_closest(points, 1);
     assert(out.size() == 1);
-    assert(out[0] == std::vector<int>{1, 1});
+    assert(out[0] == vector<int>{1, 1});
   }
   {
     // Ties at distance 2: either point is a valid answer for k = 1.
     const input_t points{{1, 1}, {-1, -1}};
     const auto out = k_closest(points, 1);
     assert(out.size() == 1);
-    assert((out[0] == std::vector<int>{1, 1} || out[0] == std::vector<int>{-1, -1}));
+    assert((out[0] == vector<int>{1, 1} || out[0] == vector<int>{-1, -1}));
   }
 
   return 0;
